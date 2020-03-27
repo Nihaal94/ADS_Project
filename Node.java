@@ -24,7 +24,7 @@ class Node<T>
     /**
      * left sibling node
      */
-    Node<T> left;
+    Node<T> prev;
 
     /**
      * parent node
@@ -34,7 +34,7 @@ class Node<T>
     /**
      * right sibling node
      */
-    Node<T> right;
+    Node<T> next;
 
     /**
      * true if this node has had a child removed since this node was added to
@@ -63,8 +63,8 @@ class Node<T>
      */
     public Node(T data, double key)
     {
-        right = this;
-        left = this;
+        next = this;
+        prev = this;
         this.data = data;
         this.key = key;
     }
