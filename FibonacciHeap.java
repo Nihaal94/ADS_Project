@@ -11,15 +11,11 @@ import java.util.List;
  */
 class FibonacciHeap<T>
 {
-    //~ Static fields/initializers ---------------------------------------------
-
-    private static final double oneOverLogPhi =
-            1.0 / Math.log((1.0 + Math.sqrt(5.0)) / 2.0);
-
+    
     //~ Instance fields --------------------------------------------------------
 
     /**
-     * Points to the minimum node in the heap.
+     * Points to the node with the maximum key in the heap.
      */
     private Node<T> maxNode;
 
@@ -27,6 +23,12 @@ class FibonacciHeap<T>
      * Number of nodes in the heap.
      */
     private int numNodes;
+
+
+    //~ Static fields/initializers ---------------------------------------------
+
+    private static final double oneOverLogPhi =
+            1.0 / Math.log((1.0 + Math.sqrt(5.0)) / 2.0);
 
 
     //~ Constructors -----------------------------------------------------------
@@ -69,10 +71,10 @@ class FibonacciHeap<T>
 
         // concatenate node into max list
         if (maxNode != null) {
-            node.left = maxNode;
-            node.right = maxNode.right;
-            maxNode.right = node;
-            node.right.left = node;
+            node.prev = maxNode;
+            node.next = maxNode.next;
+            maxNode.next = node;
+            node.next.prev = node;
 
             if (key > maxNode.key) {
                 maxNode = node;
@@ -116,36 +118,36 @@ class FibonacciHeap<T>
         if (z != null) {
             int numKids = z.degree;
             Node<T> x = z.child;
-            Node<T> tempRight;
+            Node<T> tempNext;
 
             // for each child of z do cutting and adding to maxList
             while (numKids > 0) {
-                tempRight = x.right;
+                tempNext = x.next;
 
                 // remove x from child list
-                x.left.right = x.right;
-                x.right.left = x.left;
+                x.prev.next = x.next;
+                x.next.prev = x.prev;
 
                 // add x to root list of heap
-                x.left = maxNode;
-                x.right = maxNode.right;
-                maxNode.right = x;
-                x.right.left = x;
+                x.prev = maxNode;
+                x.next = maxNode.next;
+                maxNode.next = x;
+                x.next.prev = x;
 
                 // set parent[x] to null
                 x.parent = null;
-                x = tempRight;
+                x = tempNext;
                 numKids--;
             }
 
             // remove z from root list of heap
-            z.left.right = z.right;
-            z.right.left = z.left;
+            z.prev.next = z.next;
+            z.next.prev = z.prev;
 
-            if (z == z.right) {
+            if (z == z.next) {
                 maxNode = null;
             } else {
-                maxNode = z.right;
+                maxNode = z.next;
                 consolidate();
             }
 
@@ -179,11 +181,11 @@ class FibonacciHeap<T>
 
         if (x != null) {
             numRoots++;
-            x = x.right;
+            x = x.next;
 
             while (x != maxNode) {
                 numRoots++;
-                x = x.right;
+                x = x.next;
             }
         }
 
@@ -191,7 +193,7 @@ class FibonacciHeap<T>
         while (numRoots > 0) {
             // Access this node's degree..
             int d = x.degree;
-            Node<T> next = x.right;
+            Node<T> Next = x.next;
 
             // ..and see if there's another of the same degree.
             for (;;) {
@@ -222,7 +224,7 @@ class FibonacciHeap<T>
             array.set(d, x);
 
             // Move forward through list.
-            x = next;
+            x = Next;
             numRoots--;
         }
 
@@ -239,14 +241,14 @@ class FibonacciHeap<T>
             // We've got a live one, add it to root list.
             if (maxNode != null) {
                 // First remove node from root list.
-                y.left.right = y.right;
-                y.right.left = y.left;
+                y.prev.next = y.next;
+                y.next.prev = y.prev;
 
                 // Now add to root list, again.
-                y.left = maxNode;
-                y.right = maxNode.right;
-                maxNode.right = y;
-                y.right.left = y;
+                y.prev = maxNode;
+                y.next = maxNode.next;
+                maxNode.next = y;
+                y.next.prev = y;
 
                 // Check if this is a new min.
                 if (y.key > maxNode.key) {
@@ -271,21 +273,21 @@ class FibonacciHeap<T>
     protected void link(Node<T> y, Node<T> x)
     {
         // remove y from root list of heap
-        y.left.right = y.right;
-        y.right.left = y.left;
+        y.prev.next = y.next;
+        y.next.prev = y.prev;
 
         // make y a child of x
         y.parent = x;
 
         if (x.child == null) {
             x.child = y;
-            y.right = y;
-            y.left = y;
+            y.next = y;
+            y.prev = y;
         } else {
-            y.left = x.child;
-            y.right = x.child.right;
-            x.child.right = y;
-            y.right.left = y;
+            y.prev = x.child;
+            y.next = x.child.next;
+            x.child.next = y;
+            y.next.prev = y;
         }
 
         // increase degree[x]
@@ -339,13 +341,13 @@ class FibonacciHeap<T>
     protected void cut(Node<T> x, Node<T> y)
     {
         // remove x from childlist of y and decrement degree[y]
-        x.left.right = x.right;
-        x.right.left = x.left;
+        x.prev.next = x.next;
+        x.next.prev = x.prev;
         y.degree--;
 
         // reset y.child if necessary
         if (y.child == x) {
-            y.child = x.right;
+            y.child = x.next;
         }
 
         if (y.degree == 0) {
@@ -353,10 +355,10 @@ class FibonacciHeap<T>
         }
 
         // add x to root list of heap
-        x.left = maxNode;
-        x.right = maxNode.right;
-        maxNode.right = x;
-        x.right.left = x;
+        x.prev = maxNode;
+        x.next = maxNode.next;
+        maxNode.next = x;
+        x.next.prev = x;
 
         // set parent[x] to nil
         x.parent = null;
