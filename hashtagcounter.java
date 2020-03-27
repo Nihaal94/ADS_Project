@@ -1,6 +1,5 @@
 /**
- * Written by Nihaal Maipady on 03/05/20.
- * Advanced Data Structure Project
+ * Written by Nihaal Maipady on 03/05/20 as part of the Advanced Data Structures Project
  *
  */
 
