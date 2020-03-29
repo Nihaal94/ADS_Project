@@ -1,0 +1,216 @@
+else
+Node@5caf905d 5
+facebook 5
+else
+Node@548c4f57 3
+youtube 3
+get facebook
+facebook 10
+else
+Node@1218025c 2
+amazon 2
+else
+Node@816f27d 4
+gmail 4
+else
+Node@87aac27 2
+weather 2
+get facebook
+facebook 6
+get youtube
+youtube 8
+else
+Node@3e3abc88 2
+ebay 2
+else
+Node@6ce253f1 2
+news 2
+get facebook
+facebook 12
+get youtube
+youtube 11
+get amazon
+amazon 6
+get facebook
+facebook 12
+get amazon
+amazon 2
+else
+Node@e9e54c2 3
+stop 3
+else
+Node@65ab7765 4
+playing 4
+get gmail
+gmail 15
+else
+Node@1b28cdfa 3
+drawing 3
+else
+Node@eed1f14 25
+cnn 25
+get weather
+weather 12
+get ebay
+ebay 12
+else
+Node@7229724f 6
+netflix 6
+get cnn
+cnn 5
+else
+Node@4c873330 7
+president 7
+else
+Node@119d7047 2
+cholinergic 2
+else
+Node@776ec8df 5
+india 5
+else
+Node@4eec7777 1
+instagram 1
+else
+Node@3b07d329 20
+florida 20
+else
+Node@41629346 5
+dreams 5
+else
+Node@404b9385 10
+snapchat 10
+else
+Node@6d311334 5
+protien 5
+else
+Node@682a0b20 1
+chokefull 1
+else
+Node@3d075dc0 1
+choker 1
+else
+Node@214c265e 3
+chivalry 3
+else
+Node@448139f0 7
+cholera 7
+else
+Node@7cca494b 10
+workout 10
+else
+Node@7ba4f24f 4
+tinder 4
+else
+Node@3b9a45b3 7
+choler 7
+else
+Node@7699a589 9
+chlorambucil 9
+else
+Node@58372a00 6
+bandwith 6
+else
+Node@4dd8dc3 1
+chiton 1
+else
+Node@6d03e736 9
+chloride 9
+get president
+president 8
+else
+Node@568db2f2 4
+chiseling 4
+else
+Node@378bf509 10
+chitty 10
+else
+Node@5fd0d5ae 7
+cholla 7
+else
+Node@2d98a335 6
+chirr 6
+else
+Node@16b98e56 6
+romeo 6
+get chirr
+chirr 9
+else
+Node@7ef20235 1
+rainbow 1
+else
+Node@27d6c5e0 10
+choirboy 10
+else
+Node@4f3f5b24 6
+loveydovey 6
+get chitty
+chitty 10
+else
+Node@15aeb7ab 10
+chlorella 10
+else
+Node@7b23ec81 5
+batshit 5
+else
+Node@6acbcfc0 2
+chondritic 2
+else
+Node@5f184fc6 3
+choanocyte 3
+get tinder
+tinder 5
+get choirboy
+choirboy 10
+else
+Node@3feba861 6
+chives 6
+else
+Node@5b480cf9 6
+choctaw 6
+get chives
+chives 6
+else
+Node@6f496d9f 6
+oxymoron 6
+else
+Node@723279cf 9
+radium 9
+get bandwith
+bandwith 7
+else
+Node@10f87f48 2
+chokra 2
+else
+Node@b4c966a 6
+choix 6
+get choker
+choker 9
+else
+Node@2f4d3709 1
+choleric 1
+else
+Node@4e50df2e 10
+choir 10
+get florida
+florida 9
+else
+Node@1d81eb93 4
+chirurgy 4
+else
+Node@7291c18f 7
+glycerine 7
+get president
+president 2
+else
+Node@34a245ab 10
+nonsense 10
+get chirurgy
+chirurgy 4
+get instagram
+instagram 1
+else
+Node@7cc355be 2
+connundrum 2
+else
+Node@6e8cf4c6 5
+chokecherry 5

@@ -1,0 +1,6 @@
+facebook,youtube,amazon
+facebook,youtube,amazon,gmail
+facebook,cnn,youtube,gmail,weather,ebay,amazon,netflix,playing,drawing,stop,news
+facebook,cnn,youtube,florida,chitty,gmail,president,chirr,weather
+facebook,cnn,youtube,florida,choirboy
+facebook,cnn,florida,youtube,choirboy
